@@ -15,6 +15,7 @@ public class MapUtils {
 		return map == null || map.isEmpty();
 	}
 
+
 	public static boolean isNotEmpty(final Map<?, ?> map) {
 		return !isEmpty(map);
 	}
