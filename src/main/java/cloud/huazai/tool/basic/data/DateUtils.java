@@ -311,6 +311,15 @@ public class DateUtils implements Serializable {
 	}
 
 
+	/**
+	 * 获取某年周数的日历
+	 *
+	 * @param year
+	 * @param weekOfYear
+	 * @param isMondayBeginOfWeek
+	 * @param minimalDaysInFirstWeek
+	 * @return
+	 */
 	public static Calendar getCalendarOfWeekOfYear( int year, int weekOfYear,boolean isMondayBeginOfWeek,int minimalDaysInFirstWeek) {
 		Calendar calendar = getCalendar(year);
 		calendar.setMinimalDaysInFirstWeek(minimalDaysInFirstWeek);
