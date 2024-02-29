@@ -329,6 +329,16 @@ public class DateUtils implements Serializable {
 		calendar.set(Calendar.WEEK_OF_YEAR, weekOfYear);
 		return calendar;
 	}
+
+	/**
+	 *
+	 * @param year
+	 * @param month
+	 * @param weekOfMonth
+	 * @param isMondayBeginOfWeek
+	 * @param minimalDaysInFirstWeek
+	 * @return
+	 */
 	public static Calendar getCalendarOfWeekOfMonth( int year, int month, int weekOfMonth,boolean isMondayBeginOfWeek,int minimalDaysInFirstWeek) {
 
 		Calendar calendar = getCalendar(year,month);
