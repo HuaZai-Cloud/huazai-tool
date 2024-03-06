@@ -351,48 +351,90 @@ public class DateUtils implements Serializable {
 		return calendar;
 	}
 
+	/**
+	 * 格式化
+	 *
+	 * @param date 日期时间
+	 * @param dateFormat 日期格式
+	 * @return 日期格式的日期时间字符串
+	 */
 	public static String format(Date date, String dateFormat) {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
 		return simpleDateFormat.format(date);
 	}
 
+	/**
+	 * 格式化
+	 *
+	 * @param localDateTime 当地日期时间
+	 * @param dateFormat 日期格式
+	 * @return 日期格式的日期时间字符串
+	 */
 	public static String format(LocalDateTime localDateTime,String dateFormat) {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(dateFormat);
 		return dateTimeFormatter.format(localDateTime);
 	}
 
+	/**
+	 * 格式化
+	 *
+	 * @param localDate 当地日期时间
+	 * @param dateFormat 日期格式
+	 * @return 日期格式的日期时间字符串
+	 */
 	public static String format(LocalDate localDate,String dateFormat) {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(dateFormat);
 
 		return dateTimeFormatter.format(localDate);
 	}
 
-	public static LocalDateTime parseLocalDateTime(String localDateTime, String dateFormat) {
+	/**
+	 * 解析当地日期时间
+	 *
+	 * @param dateStr 日期时间字符串
+	 * @param dateFormat 日期格式
+	 * @return 当地日期时间
+	 */
+	public static LocalDateTime parseLocalDateTime(String dateStr, String dateFormat) {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(dateFormat);
 		try {
-			return LocalDateTime.parse(localDateTime, dateTimeFormatter);
+			return LocalDateTime.parse(dateStr, dateTimeFormatter);
 		} catch (Exception e) {
-			log.error("localDateTime {} with dateFormat {} unconformity", localDateTime, dateFormat);
+			log.error("localDateTime {} with dateFormat {} unconformity", dateStr, dateFormat);
 			throw new RuntimeException(e);
 		}
 	}
 
-	public static LocalDate parseLocalDate(String localDate, String dateFormat) {
+	/**
+	 * 解析当地日期
+	 *
+	 * @param dateStr 日期时间字符串
+	 * @param dateFormat 日期格式
+	 * @return 当地日期
+	 */
+	public static LocalDate parseLocalDate(String dateStr, String dateFormat) {
 		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(dateFormat);
 		try {
-			return LocalDate.parse(localDate, dateTimeFormatter);
+			return LocalDate.parse(dateStr, dateTimeFormatter);
 		} catch (Exception e) {
-			log.error("localDate {} with dateFormat {} unconformity", localDate, dateFormat);
+			log.error("localDate {} with dateFormat {} unconformity", dateStr, dateFormat);
 			throw new RuntimeException(e);
 		}
 	}
 
-	public static Date parse(String date, String dateFormat) {
+	/**
+	 * 解析日期时间
+	 *
+	 * @param dateStr 日期时间字符串
+	 * @param dateFormat 日期格式
+	 * @return 当地日期
+	 */
+	public static Date parse(String dateStr, String dateFormat) {
 		try {
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
-			return simpleDateFormat.parse(date);
+			return simpleDateFormat.parse(dateStr);
 		} catch (Exception e) {
-			log.error("date {} with dateFormat {} unconformity", date, dateFormat);
+			log.error("date {} with dateFormat {} unconformity", dateStr, dateFormat);
 			throw new RuntimeException(e);
 		}
 	}

@@ -6,6 +6,7 @@ import cloud.huazai.tool.validation.StringDate;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.util.Date;
 
 
 /**
@@ -45,7 +46,7 @@ public class StringDateConstraint implements ConstraintValidator<StringDate, Str
 		}
 
 		try {
-			DateUtils.parse(strDate, dateFormat);
+			Date parse = DateUtils.parse(strDate, dateFormat);
 			return true;
 		} catch (Exception e) {
 			return false;
