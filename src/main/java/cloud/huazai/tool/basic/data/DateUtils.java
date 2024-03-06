@@ -312,13 +312,13 @@ public class DateUtils implements Serializable {
 
 
 	/**
-	 * 获取某年周数的日历
+	 * 获取某年的周数日历
 	 *
-	 * @param year
-	 * @param weekOfYear
-	 * @param isMondayBeginOfWeek
-	 * @param minimalDaysInFirstWeek
-	 * @return
+	 * @param year 年
+	 * @param weekOfYear 一年的第几周
+	 * @param isMondayBeginOfWeek 星期一是否作为一周的开始
+	 * @param minimalDaysInFirstWeek 第一周最少天数
+	 * @return 日历
 	 */
 	public static Calendar getCalendarOfWeekOfYear( int year, int weekOfYear,boolean isMondayBeginOfWeek,int minimalDaysInFirstWeek) {
 		Calendar calendar = getCalendar(year);
@@ -331,13 +331,14 @@ public class DateUtils implements Serializable {
 	}
 
 	/**
+	 *获取某年某月的周数日历
 	 *
-	 * @param year
-	 * @param month
-	 * @param weekOfMonth
-	 * @param isMondayBeginOfWeek
-	 * @param minimalDaysInFirstWeek
-	 * @return
+	 * @param year 年
+	 * @param month 月
+	 * @param weekOfMonth 一个月的第几周
+	 * @param isMondayBeginOfWeek 星期一是否作为一周的开始
+	 * @param minimalDaysInFirstWeek 第一周最少天数
+	 * @return 日历
 	 */
 	public static Calendar getCalendarOfWeekOfMonth( int year, int month, int weekOfMonth,boolean isMondayBeginOfWeek,int minimalDaysInFirstWeek) {
 
