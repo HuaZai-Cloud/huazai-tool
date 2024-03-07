@@ -49,19 +49,14 @@ public class ArrayUtils {
 	public static final Class<?>[] EMPTY_CLASS_ARRAY = new Class[0];
 
 
-	public static <T> boolean isEmpty(T[] array) {
-		return array == null || array.length == 0;
+	public static <T> boolean isEmpty(T[] arrays) {
+		return arrays == null || arrays.length == 0;
 	}
 
-	// public static boolean isEmpty(final Object[] array) {
-	// 	return getLength(array) == 0;
-	// }
-	//
-	// public static int getLength(final Object array) {
-	// 	if (array == null) {
-	// 		return 0;
-	// 	}
-	// 	return Array.getLength(array);
-	// }
+	public static <T> boolean isNotEmpty(T[] arrays) {
+		return !isEmpty(arrays);
+	}
+
+
 
 }
