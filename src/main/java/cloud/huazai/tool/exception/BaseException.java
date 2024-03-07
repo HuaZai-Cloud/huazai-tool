@@ -6,7 +6,7 @@ import lombok.Setter;
 /**
  * BaseException
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-15
  */
 @Setter

@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * StringDateConstraint
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-02-24
  */
 public class StringDateConstraint implements ConstraintValidator<StringDate, String> {

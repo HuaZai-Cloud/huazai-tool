@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 /**
  * EnumValue
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-02-24
  */
 @Retention(RetentionPolicy.RUNTIME)

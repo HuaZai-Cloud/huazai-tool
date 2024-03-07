@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 /**
  * BaseVO
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-20
  */
 

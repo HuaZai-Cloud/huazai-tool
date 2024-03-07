@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 /**
  * Response
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-20
  */
 

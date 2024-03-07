@@ -3,7 +3,7 @@ package cloud.huazai.tool.basic.data;
 /**
  * DateFormat
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2023-12-14
  */
 public class DateFormat {

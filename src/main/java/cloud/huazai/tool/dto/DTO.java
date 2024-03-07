@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * DTO
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-20
  */
 public abstract class DTO implements Serializable {

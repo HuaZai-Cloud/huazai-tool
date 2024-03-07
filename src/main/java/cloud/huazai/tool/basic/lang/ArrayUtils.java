@@ -5,7 +5,7 @@ import java.lang.reflect.Array;
 /**
  * ArrayUtils
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-15
  */
 public class ArrayUtils {

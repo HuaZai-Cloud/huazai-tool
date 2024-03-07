@@ -8,13 +8,12 @@ import java.util.StringJoiner;
 /**
  * StringUtils
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-15
  */
 public class StringUtils {
 
 	public static final String EMPTY = "";
-
 
 
 	public static boolean isBlank(CharSequence cs) {

@@ -15,7 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * StrDate
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-15
  */
 // @Retention(RetentionPolicy.RUNTIME)

@@ -3,7 +3,7 @@ package cloud.huazai.tool.exception;
 /**
  * BusinessExceptionEnum
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-20
  */
 public enum BusinessExceptionEnum implements IBusinessExceptionEnum{

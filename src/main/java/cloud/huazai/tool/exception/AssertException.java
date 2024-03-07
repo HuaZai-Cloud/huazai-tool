@@ -3,7 +3,7 @@ package cloud.huazai.tool.exception;
 /**
  * AssertException
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2024-01-15
  */
 public class AssertException {

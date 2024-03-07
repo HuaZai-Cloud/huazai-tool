@@ -1,18 +1,23 @@
 package cloud.huazai.tool.basic.data;
 
+import cloud.huazai.tool.basic.lang.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * DateUtils 日期时间工具类
  *
- * @author Di Wu
+ * @author HuaZai
  * @since 2023-12-13
  */
 
@@ -432,6 +437,7 @@ public class DateUtils implements Serializable {
 	public static Date parse(String dateStr, String dateFormat) {
 		try {
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
+			simpleDateFormat.setLenient(true);
 			return simpleDateFormat.parse(dateStr);
 		} catch (Exception e) {
 			log.error("date {} with dateFormat {} unconformity", dateStr, dateFormat);
@@ -1171,6 +1177,59 @@ public class DateUtils implements Serializable {
 		return dateTimeDiff;
 	}
 
+
+
+	public static DateTimeDiff between(LocalDate beginDate, LocalDate endDate) {
+		return between(getLocalDateTime(beginDate), getLocalDateTime(endDate));
+	}
+
+	public static DateTimeDiff between(LocalTime beginDate, LocalTime endDate) {
+		return between(getLocalDateTime(beginDate), getLocalDateTime(endDate));
+	}
+
+	public static DateTimeDiff between(Date beginDate, Date endDate) {
+		return between(getLocalDateTime(beginDate), getLocalDateTime(endDate));
+	}
+
+	public static DateTimeDiff between(Calendar beginCalendar, Calendar endCalendar) {
+		return between(getLocalDateTime(getDate(beginCalendar)), getLocalDateTime(getDate(endCalendar)));
+	}
+
+
+	public static boolean isValidDate(String dateStr, String dateFormat) {
+
+		if (StringUtils.isBlank(dateStr) || StringUtils.isBlank(dateFormat)) {
+			return false;
+		}
+
+		DateTimeFormatter format = new DateTimeFormatterBuilder()
+				.appendPattern(dateFormat)
+				.parseDefaulting(ChronoField.YEAR,1970)
+				.parseDefaulting(ChronoField.MONTH_OF_YEAR,1)
+				.parseDefaulting(ChronoField.DAY_OF_MONTH, 1)
+				.parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+				.parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+				.parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+				.toFormatter();
+		try {
+			LocalDateTime.parse(dateStr, format);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+
+	}
+
+	private static Calendar getCalendar() {
+		return Calendar.getInstance();
+	}
+
+
+	private static Date offset(Calendar calendar, int offset, int unit) {
+		calendar.add(unit, offset);
+		return calendar.getTime();
+	}
+
 	private static DateTimeDiff between(LocalDateTime beginDate, LocalDateTime endDate ,boolean isPositiveNumber){
 		DateTimeDiff dateTimeDiff = new DateTimeDiff();
 
@@ -1208,31 +1267,5 @@ public class DateUtils implements Serializable {
 		return dateTimeDiff;
 	}
 
-	public static DateTimeDiff between(LocalDate beginDate, LocalDate endDate) {
-		return between(getLocalDateTime(beginDate), getLocalDateTime(endDate));
-	}
-
-	public static DateTimeDiff between(LocalTime beginDate, LocalTime endDate) {
-		return between(getLocalDateTime(beginDate), getLocalDateTime(endDate));
-	}
-
-	public static DateTimeDiff between(Date beginDate, Date endDate) {
-		return between(getLocalDateTime(beginDate), getLocalDateTime(endDate));
-	}
-
-	public static DateTimeDiff between(Calendar beginCalendar, Calendar endCalendar) {
-		return between(getLocalDateTime(getDate(beginCalendar)), getLocalDateTime(getDate(endCalendar)));
-	}
-
-
-	private static Calendar getCalendar() {
-		return Calendar.getInstance();
-	}
-
-
-	private static Date offset(Calendar calendar, int offset, int unit) {
-		calendar.add(unit, offset);
-		return calendar.getTime();
-	}
 
 }
