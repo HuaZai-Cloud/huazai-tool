@@ -436,6 +436,12 @@ public class DateUtils implements Serializable {
 	 */
 	public static Date parse(String dateStr, String dateFormat) {
 		try {
+			if (!isValidDate(dateStr, dateFormat)) {
+				log.error("date {} with dateFormat {} unconformity", dateStr, dateFormat);
+				throw new RuntimeException(StringUtils.format("date {} with dateFormat {} unconformity", dateStr, dateFormat));
+			}
+
+
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
 			simpleDateFormat.setLenient(true);
 			return simpleDateFormat.parse(dateStr);
