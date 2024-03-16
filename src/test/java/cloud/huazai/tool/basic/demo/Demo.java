@@ -18,6 +18,7 @@ public class Demo {
 		System.out.println("format = " + format);
 
 
+		System.out.println("format = " + format);
 	}
 
 	public static void demo(String a) {
