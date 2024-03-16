@@ -1,18 +1,6 @@
 package cloud.huazai.tool.basic.demo;
 
-import cloud.huazai.tool.basic.constant.SymbolConstant;
-import cloud.huazai.tool.basic.data.DateFormat;
-import cloud.huazai.tool.basic.data.DateUtils;
 import cloud.huazai.tool.basic.lang.StringUtils;
-import cn.hutool.core.util.StrUtil;
-import com.threesides.lang.StringUtil;
-import org.junit.Test;
-import org.springframework.format.datetime.DateFormatter;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 /**
  * Demo
