@@ -1,10 +1,6 @@
 package cloud.huazai.tool.validation;
 
-import cloud.huazai.tool.validation.constraint.EnumValueConstraint;
 
-
-import javax.validation.Constraint;
-import javax.validation.Payload;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -18,7 +14,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.PARAMETER, ElementType.FIELD})
-@Constraint(validatedBy = EnumValueConstraint.class)
+// @Constraint(validatedBy = EnumValueConstraint.class)
 public @interface EnumValue {
 
 	Class<? extends Enum<?>> enumType();
@@ -30,5 +26,5 @@ public @interface EnumValue {
 
 	Class<?>[] groups() default {};
 
-	Class<? extends Payload>[] payload() default {};
+	// Class<? extends Payload>[] payload() default {};
 }

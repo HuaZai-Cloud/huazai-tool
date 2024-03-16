@@ -1,10 +1,7 @@
 package cloud.huazai.tool.basic.lang;
 
 import cloud.huazai.tool.basic.constant.SymbolConstant;
-import cn.hutool.core.text.StrFormatter;
-import cn.hutool.core.util.ArrayUtil;
-import cn.hutool.core.util.CharsetUtil;
-import cn.hutool.core.util.StrUtil;
+
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
@@ -143,7 +140,7 @@ public class StringUtils {
 
 
 	public static String format(String strPattern, String placeHolder, String... argArray) {
-		if (StrUtil.isBlank(strPattern) || StrUtil.isBlank(placeHolder) || ArrayUtils.isEmpty(argArray)) {
+		if (StringUtils.isBlank(strPattern) || StringUtils.isBlank(placeHolder) || ArrayUtils.isEmpty(argArray)) {
 			return strPattern;
 		}
 		final int strPatternLength = strPattern.length();
